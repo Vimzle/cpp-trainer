@@ -1,0 +1,8 @@
+build/
+
+CMakeUserPresets.json
+
+.env
+
+.idea/
+.vscode/

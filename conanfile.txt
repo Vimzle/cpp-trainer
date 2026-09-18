@@ -1,0 +1,9 @@
+[requires]
+tgbot/1.12.3
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout
