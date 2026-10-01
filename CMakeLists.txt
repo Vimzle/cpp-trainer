@@ -4,6 +4,6 @@ project(cpp-trainer CXX)
 
 find_package(TgBot CONFIG REQUIRED)
 
-add_executable(cpp-trainer src/main.cpp)
+add_executable(cpp-trainer src/main.cpp src/core/Question.cpp src/core/Quiz.cpp)
 
 target_link_libraries(cpp-trainer PRIVATE tgbot::tgbot)
