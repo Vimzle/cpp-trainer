@@ -1,9 +1,13 @@
-#include <iostream>
 #include <vector>
+
 #include "core/Question.h"
-#include "core/Quiz.h"
+#include "telegram_bot/Bot.h"
+#include "dotenv.h"
 
 int main() {
+    dotenv::env.load_dotenv();
+    const auto token = std::string(std::getenv("BOT_TOKEN"));
+
     std::vector<Question> questions{
         Question(
             "Какой контейнер хранит элементы последовательно?", // text
@@ -14,12 +18,7 @@ int main() {
         )
     };
 
-    Quiz quiz(questions);
-    const Question& current = quiz.getCurrentQuestion();
-
-    std::cout << current.getText() << '\n';
-
-    for (const std::string& option : current.getOptions()) {
-        std::cout << option << '\n';
-    }
+    Bot bot(token, questions);
+    bot.run();
+    return 0;
 }

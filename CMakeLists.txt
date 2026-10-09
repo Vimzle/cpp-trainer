@@ -9,6 +9,6 @@ add_subdirectory(
     ${CMAKE_CURRENT_BINARY_DIR}/cpp-dotenv
 )
 
-add_executable(cpp-trainer src/main.cpp src/core/Question.cpp src/core/Quiz.cpp)
+add_executable(cpp-trainer src/main.cpp src/core/Question.cpp src/core/Quiz.cpp src/telegram_bot/Bot.cpp)
 
 target_link_libraries(cpp-trainer PRIVATE tgbot::tgbot cpp_dotenv)
